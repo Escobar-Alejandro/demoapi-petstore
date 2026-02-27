@@ -1,8 +1,7 @@
 # demoapi-petstore
 
-Automation testing framework for the PerfDog store, built with TypeScript + Playwright using a Page Object Model (POM) architecture.
-Currently focusing on backend testing due to the early stage of the project but there is code ready as placeholder to be ready
-for the eventual web UI implementation.
+Automation testing framework for the PerfDog store, built with TypeScript + Playwright.
+Currently focusing on backend testing due to the early stage of the project however there is placeholder code ready for the future web UI implementation.
 
 ## 1) Current scope
 
