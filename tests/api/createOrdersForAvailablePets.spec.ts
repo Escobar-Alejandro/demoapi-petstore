@@ -10,7 +10,13 @@ test('PD-2 | List available pets and create one order per pet',
             expect(availablePets.response.ok()).toBeTruthy();
             expect(availablePets.body.length).toBeGreaterThanOrEqual(5);
 
-            const selectedPets = availablePets.body.slice(0, 5);
+            const orderablePets = availablePets.body.filter((pet) =>
+                Number.isSafeInteger(pet.id) && pet.id > 0 && pet.id <= 2147483647
+            );
+
+            console.log('Pets skipped due to non-orderable id constraints:', availablePets.body.length - orderablePets.length);
+
+            const selectedPets = orderablePets.slice(0, 5);
             expect(selectedPets).toHaveLength(5);
 
             console.log('Selected available pets for order creation:');
