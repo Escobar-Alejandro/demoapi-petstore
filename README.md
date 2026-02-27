@@ -3,6 +3,10 @@
 Automation testing framework for the PerfDog store, built with TypeScript + Playwright.
 Currently focusing on backend testing due to the early stage of the project however there is placeholder code ready for the future web UI implementation.
 
+Project key: "PD" (Petstore Demo)
+
+A Trello board has been created to track tasks, stories and test cases. Please reach out to the workspace manager to be added.
+
 ## 1) Current scope
 
 - API controllers in `api/` for Petstore Swagger endpoints:
