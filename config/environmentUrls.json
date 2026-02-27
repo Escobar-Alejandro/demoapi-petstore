@@ -1,0 +1,7 @@
+{
+    "baseUrls": {
+    "prod": "https://petstore.swagger.io/v2/",
+    "staging": "https://staging.petstore.swagger.io/v2/",
+    "dev": "https://dev.petstore.swagger.io/v2/"
+}
+}

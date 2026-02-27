@@ -1,0 +1,46 @@
+name: Smoke Tests
+
+on:
+  workflow_dispatch:
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+
+    env:
+      ENVIRONMENT: 'prod'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Playwright dependencies
+        run: npx playwright install-deps
+
+      - name: Install Playwright browsers
+        run: npx playwright install
+
+      - name: Run Playwright smoke and api-tagged tests
+        run: npx playwright test --grep '@smoke|@api'
+
+      - name: Upload Playwright report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report
+          path: playwright-report
+        
+      - name: Upload output artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: output-files
+          path: ./output

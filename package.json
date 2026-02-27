@@ -1,0 +1,35 @@
+{
+  "name": "ecomm-demoblaze",
+  "version": "1.0.0",
+  "description": "Automation testing framework of the demoblaze e-commerce",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Escobar-Alejandro/ecomm-demoblaze.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Escobar-Alejandro/ecomm-demoblaze/issues"
+  },
+  "homepage": "https://github.com/Escobar-Alejandro/ecomm-demoblaze#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.58.2",
+    "@stylistic/eslint-plugin": "^5.9.0",
+    "@types/node": "^25.3.0",
+    "eslint": "^10.0.2",
+    "eslint-plugin-playwright": "^2.7.1",
+    "typescript-eslint": "^8.56.1"
+  },
+  "dependencies": {
+    "dotenv": "^17.3.1",
+    "typescript": "^5.9.3"
+  }
+}
