@@ -58,22 +58,18 @@ test('PD-1 | Create new pet data to API',
 
             const createdSoldPetInList = soldPets.body.find((pet) => pet.id === soldPet.id);
             expect(createdSoldPetInList).toBeDefined();
-
-            console.log('Sold pets returned by API:');
-            console.table(
-                soldPets.body.map((pet) => ({
-                    id: pet.id,
-                    name: pet.name,
-                    status: pet.status,
-                }))
-            );
+            expect(createdSoldPetInList?.status).toBe('sold');
 
             const soldPetDetails = await petController.getPetById(soldPet.id);
             expect(soldPetDetails.response.ok()).toBeTruthy();
             expect(soldPetDetails.body.id).toBe(soldPet.id);
             expect(soldPetDetails.body.status).toBe('sold');
 
-            console.log('Created sold pet details:', soldPetDetails.body);
+            console.log('Created sold pet status:', {
+                id: soldPetDetails.body.id,
+                name: soldPetDetails.body.name,
+                status: soldPetDetails.body.status,
+            });
         });
 
     });
